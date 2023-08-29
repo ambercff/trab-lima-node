@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/be07557a2e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styleProduct.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title> Produto </title>
+</head>
+<body>
+    <header>
+        <nav class="nav-main">
+            <ul class="ul-menu">
+                <div class="menu">
+                    <div class="logo">
+                        <li>
+                            <a href="/"><h1> LOGO </h1></a>
+                        </li>
+                    </div>
+
+                    <div class="search-bar">
+                        <li class="search-container">
+                            <input type="text" placeholder="Faça sua pesquisa" class="barra-pesquisa">
+                            <div class="hints">
+                            </div>
+                        </li>
+                    </div>
+
+                    <div class="infos">
+                        <div class="user">
+                            <li>
+                                <a href="login"> 
+                                    <i class="fa-solid fa-user"></i>
+                                    Faça seu login ou cadastro
+                                </a>
+                            </li>
+                        </div>
+                        
+                        <div class="fale-conosco">
+                            <li>
+                                <a href="fale_conosco.html">
+                                    <i class="fa-regular fa-message"></i>
+                                    Fale conosco
+                                </a>
+                            </li>
+                        </div>
+
+                        <div class="cart">
+                            <li>
+                                <a href="cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </a>
+                            </li>
+                        </div>
+                        
+                        <div class="hamburguer-none">
+                            <li>
+                                <i id="hamburguer-mobile" class="fa-solid fa-bars"></i>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+
+        <nav class="nav-secondary"> 
+            <ul>
+                <div class="categorias">
+                    <li class="card-categorias">
+                        <i id ="hamburguer" class="fa-solid fa-bars"></i> 
+                        <a href="#">  Categorias </a>
+
+                        <div class="sub-menu">
+                            <ul>
+                                <li> <a href="corte.html"> Ferramentas de Corte </a></li>
+                                <li> <a href="medicao.html"> Ferramentas de Medição </a></li>
+                                <li> <a href="precisao.html"> Ferramentas de Precisão </a></li>
+                                <li> <a href="impacto.html"> Ferramentas de Impacto </a></li>
+                            </ul>
+                        </div>
+                        
+                    </li>
+
+                    <li>
+                        <a href="#"> Elétrica </a>
+                    </li>
+
+                    <li>
+                    <a href="#"> Ofertas </a>
+                    </li>
+
+                    <li>
+                        <a href="#"> Fixação </a>
+                    </li>
+
+                    <li>
+                        <a href="#"> Jardinagem </a>
+                    </li>
+                </div>
+            </ul>
+        </nav> 
+    </header>
+
+    <div class="produto">
+        <div class="imagem-produto">
+            <img src="imagens/hammer.jpg">
+        </div>
+
+        <div class="texto-produto">
+            <div class="titulo-produto">
+                <h1> Lorem ipsum dolor sit amet </h1>
+            </div>
+            
+            <div class="marca">
+                <p> Marca </p>
+            </div>
+
+            <div class="pagamento">
+                <div class="valor-produto">
+                    <h1> R$ 400,00</h1>
+                </div>
+
+                <div class="forma-pagamento">
+                    <div>
+                        <p> Em até 6x sem juros de R$ 66,68</p>
+                    </div>
+
+                    <div>
+                        <p class ="text-pagamento"> Formas de pagamento </p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="container-frete">
+                <p> Calcule seu frete </p>
+                <div class="box-frete">
+                    <input type="text" class="cep" placeholder="CEP">
+                    <a href="#"> Não sei meu CEP </a>
+                </div>
+                
+            </div>
+
+            <div class="button-cart">
+                <button type="submit"> Adicionar ao Carrinho </button>
+            </div>
+        </div>  
+    </div>
+
+    <div class="title-wrapper">
+        <h1> Outros produtos: </h1>
+    </div>
+    <div class="wrapper" style="justify-content: space-evenly; margin-top: 30px;">
+        <div class="item">
+            <a href="#">
+                <div class="item-img">
+                    <img src="./imagens/hammer.jpg">
+                </div>
+                <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                <div class="valor">
+                    <p> R$ 400,00 </p>
+                </div>        
+            </a>
+                <div class="card-buy">
+                    <button type="submit" class="button-buy"> Comprar </button>
+                </div>
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="item-img">
+                    <img src="./imagens/hammer.jpg">
+                </div>
+                <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                <div class="valor">
+                    <p> R$ 400,00 </p>
+                </div>        
+            </a>
+                <div class="card-buy">
+                    <button type="submit" class="button-buy"> Comprar </button>
+                </div>
+        </div>
+
+        <div class="item">
+            <a href="#">
+                <div class="item-img">
+                    <img src="./imagens/hammer.jpg">
+                </div>
+                <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                <div class="valor">
+                    <p> R$ 400,00 </p>
+                </div>        
+            </a>
+                <div class="card-buy">
+                    <button type="submit" class="button-buy"> Comprar </button>
+                </div>
+        </div>
+        <div class="item">
+            <a href="#">
+                <div class="item-img">
+                    <img src="./imagens/hammer.jpg">
+                </div>
+                <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                <div class="valor">
+                    <p> R$ 400,00 </p>
+                </div>        
+            </a>
+                <div class="card-buy">
+                    <button type="submit" class="button-buy"> Comprar </button>
+                </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/be07557a2e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>BSH</title>
+</head>
+<body>
+    <% if (user) {%>
+    <h2> <%= user.nome %></h2>
+    <% } %>
+    <header>
+        <nav class="nav-main">
+            <ul class="ul-menu">
+                <div class="menu">
+                    <div class="logo">
+                        <li>
+                            <a href="/"><h1> LOGO </h1></a>
+                        </li>
+                    </div>
+
+                    <div class="search-bar">
+                        <li class="search-container">
+                            <input type="text" placeholder="Faça sua pesquisa" class="barra-pesquisa">
+                            <div class="hints">
+                            </div>
+                        </li>
+                    </div>
+
+                    <div class="infos">
+                        <div class="user">
+                            <li>
+                                <a href="login"> 
+                                    <i class="fa-solid fa-user"></i>
+                                    Faça seu login ou cadastro
+                                </a>
+                            </li>
+                        </div>
+                        
+                        <div class="fale-conosco">
+                            <li>
+                                <a href="fale_conosco.html">
+                                    <i class="fa-regular fa-message"></i>
+                                    Fale conosco
+                                </a>
+                            </li>
+                        </div>
+
+                        <div class="cart">
+                            <li>
+                                <a href="cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </a>
+                            </li>
+                        </div>
+                        
+                        <div class="hamburguer-none">
+                            <li>
+                                <i id="hamburguer-mobile" class="fa-solid fa-bars"></i>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+
+        <nav class="nav-secondary"> 
+            <ul>
+                <div class="categorias">
+                    <li class="card-categorias">
+                        <i id ="hamburguer" class="fa-solid fa-bars"></i> 
+                        <a href="#">  Categorias </a>
+
+                        <div class="sub-menu">
+                            <ul>
+                                <li> <a href="corte.html"> Ferramentas de Corte </a></li>
+                                <li> <a href="medicao.html"> Ferramentas de Medição </a></li>
+                                <li> <a href="precisao.html"> Ferramentas de Precisão </a></li>
+                                <li> <a href="impacto.html"> Ferramentas de Impacto </a></li>
+                            </ul>
+                        </div>
+                        
+                    </li>
+
+                    <li>
+                        <a href="#"> Elétrica </a>
+                    </li>
+
+                    <li>
+                    <a href="#"> Ofertas </a>
+                    </li>
+
+                    <li>
+                        <a href="#"> Fixação </a>
+                    </li>
+
+                    <li>
+                        <a href="#"> Jardinagem </a>
+                    </li>
+                </div>
+            </ul>
+        </nav>     
+    </header>
+
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+
+
+            <div class="slide first">
+                <img src="/imagens/promocao1.jpg">
+            </div>
+
+            <div class="slide">
+                <img src="/imagens/promocao2.jpg">
+            </div>
+
+            <div class="slide">
+                <img src="/imagens/promocao3.jpg">
+            </div>
+            
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>
+        </div>
+
+        <div class="manual-navigation">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+        </div>
+    </div>
+
+        <div class="wrapper">
+            <div class="item">
+                <a href="#">
+                    <div class="item-img">
+                        <img src="./imagens/hammer.jpg">
+                    </div>
+                    <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                    <div class="valor">
+                        <p> R$ 400,00 </p>
+                    </div>        
+                </a>
+                    <div class="card-buy">
+                        <button type="submit" class="button-buy"> Comprar </button>
+                    </div>
+            </div>
+
+            <div class="item">
+                <a href="#">
+                    <div class="item-img">
+                        <img src="./imagens/hammer.jpg">
+                    </div>
+                    <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                    <div class="valor">
+                        <p> R$ 400,00 </p>
+                    </div>        
+                </a>
+                    <div class="card-buy">
+                        <button type="submit" class="button-buy"> Comprar </button>
+                    </div>
+            </div>
+
+            <div class="item">
+                <a href="#">
+                    <div class="item-img">
+                        <img src="./imagens/hammer.jpg">
+                    </div>
+                    <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                    <div class="valor">
+                        <p> R$ 400,00 </p>
+                    </div>        
+                </a>
+                    <div class="card-buy">
+                        <button type="submit" class="button-buy"> Comprar </button>
+                    </div>
+            </div>
+
+            <div class="item">
+                <a href="#">
+                    <div class="item-img">
+                        <img src="./imagens/hammer.jpg">
+                    </div>
+                    <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                    <div class="valor">
+                        <p> R$ 400,00 </p>
+                    </div>        
+                </a>
+                    <div class="card-buy">
+                        <button type="submit" class="button-buy"> Comprar </button>
+                    </div>
+            </div>
+
+            <div class="item">
+                <a href="#">
+                    <div class="item-img">
+                        <img src="./imagens/hammer.jpg">
+                    </div>
+                    <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                    <div class="valor">
+                        <p> R$ 400,00 </p>
+                    </div>        
+                </a>
+                    <div class="card-buy">
+                        <button type="submit" class="button-buy"> Comprar </button>
+                    </div>
+            </div>
+
+        </div>
+
+        <div class="wrapper">
+            <div class="item">
+                <a href="#">
+                    <div class="item-img">
+                        <img src="./imagens/hammer.jpg">
+                    </div>
+                    <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                    <div class="valor">
+                        <p> R$ 400,00 </p>
+                    </div>        
+                </a>
+                    <div class="card-buy">
+                        <button type="submit" class="button-buy"> Comprar </button>
+                    </div>
+            </div>
+
+            <div class="item">
+                <a href="#">
+                    <div class="item-img">
+                        <img src="./imagens/hammer.jpg">
+                    </div>
+                    <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                    <div class="valor">
+                        <p> R$ 400,00 </p>
+                    </div>        
+                </a>
+                    <div class="card-buy">
+                        <button type="submit" class="button-buy"> Comprar </button>
+                    </div>
+            </div>
+            
+            <div class="item">
+                <a href="#">
+                    <div class="item-img">
+                        <img src="./imagens/hammer.jpg">
+                    </div>
+                    <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                    <div class="valor">
+                        <p> R$ 400,00 </p>
+                    </div>        
+                </a>
+                    <div class="card-buy">
+                        <button type="submit" class="button-buy"> Comprar </button>
+                    </div>
+            </div>
+
+            <div class="item">
+                <a href="#">
+                    <div class="item-img">
+                        <img src="./imagens/hammer.jpg">
+                    </div>
+                    <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                    <div class="valor">
+                        <p> R$ 400,00 </p>
+                    </div>        
+                </a>
+                    <div class="card-buy">
+                        <button type="submit" class="button-buy"> Comprar </button>
+                    </div>
+            </div>
+
+            <div class="item">
+                <a href="#">
+                    <div class="item-img">
+                        <img src="./imagens/hammer.jpg">
+                    </div>
+                    <p> Lorem ipsum dolor sit amet. Aut iure velit qui voluptate  </p>
+
+                    <div class="valor">
+                        <p> R$ 400,00 </p>
+                    </div>        
+                </a>
+                    <div class="card-buy">
+                        <button type="submit" class="button-buy"> Comprar </button>
+                    </div>
+            </div>
+
+  
+        </div>
+
+
+        <footer>
+            <div class="logo-footer">
+                <h1> LOGO </h1>
+            </div>
+        </footer>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

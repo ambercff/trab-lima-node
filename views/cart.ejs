@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/be07557a2e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styleCart.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title> Carrinho </title>
+</head>
+<body>
+    <header>
+        <nav class="nav-main">
+            <ul>
+                <div class="menu">
+                    <div class="logo">
+                        <li>
+                            <a href="index.html"><h1> LOGO </h1></a>
+                        </li>
+                    </div>
+
+                    <div class="search-bar">
+                        <li class="search-container">
+                            <input type="text" placeholder="Faça sua pesquisa" class="barra-pesquisa">
+                        </li>
+                    </div>
+
+                    <div class="infos">
+                        <div class="user">
+                            <li>
+                                <a href="login.html"> 
+                                    <i class="fa-solid fa-user"></i>
+                                    Faça seu login ou cadastro
+                                </a>
+                            </li>
+                        </div>
+                        
+                        <div class="fale-conosco">
+                            <li>
+                                <a href="fale_conosco.html">
+                                    <i class="fa-regular fa-message"></i>
+                                    Fale conosco
+                                </a>
+                            </li>
+                        </div>
+
+                        <div class="cart">
+                            <li>
+                                <a href="cart.html">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+
+        <nav class="nav-secondary"> 
+            <ul>
+                <div class="categorias">
+                    <li class="card-categorias">
+                        <i id ="hamburguer" class="fa-solid fa-bars"></i> 
+                        <a href="#">  Categorias </a>
+
+                        <div class="sub-menu">
+                            <ul>
+                                <li> <a href="corte.html"> Ferramentas de Corte </a></li>
+                                <li> <a href="medicao.html"> Ferramentas de Medição </a></li>
+                                <li> <a href="precisao.html"> Ferramentas de Precisão </a></li>
+                                <li> <a href="impacto.html"> Ferramentas de Impacto </a></li>
+                            </ul>
+                        </div>
+                        
+                    </li>
+
+                    <li>
+                        <a href="#"> Elétrica </a>
+                    </li>
+
+                    <li>
+                    <a href="#"> Ofertas </a>
+                    </li>
+
+                    <li>
+                        <a href="#"> Fixação </a>
+                    </li>
+
+                    <li>
+                        <a href="#"> Jardinagem </a>
+                    </li>
+                </div>
+            </ul>
+        </nav> 
+    </header>
+
+    <div class="container-product">
+        <div class="image-product">
+            <img src="./imagens/hammer.jpg">
+        </div>
+
+        <div class="texto-product">
+            <div class="title-product">
+                <h1> Lorem ipsum dolor sit amet </h1>
+            </div>
+
+            <div class="pagamento">
+                <div class="valor-produto">
+                    <h2> R$ 400,00 </h2>
+                </div>            
+                
+                <div class="forma-pagamento">
+                    <div>
+                        <p> Em até 6x sem juros de R$ 66,68</p>
+                    </div>
+
+                    <div>
+                        <p class ="text-pagamento"> Formas de pagamento </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container-frete">
+                <p> Calcule seu frete </p>
+                <div class="box-frete">
+                    <input type="text" class="cep" placeholder="CEP">
+                    <a href="#"> Não sei meu CEP </a>
+                </div>
+            </div>      
+        </div>    
+        
+        <div class="container-valor">
+        <p> Subtotal: </p>
+        <p> Desconto: </p>
+        <p> Frete: </p>
+        <p class="text-total"> Total: </p> 
+        </div>   
+    </div>
+
+
+
+
+    </body>
+</html>
+
+
