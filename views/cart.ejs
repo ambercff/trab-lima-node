@@ -11,24 +11,26 @@
 <body>
     <header>
         <nav class="nav-main">
-            <ul>
+            <ul class="ul-menu">
                 <div class="menu">
                     <div class="logo">
                         <li>
-                            <a href="index.html"><h1> LOGO </h1></a>
+                            <a href="/"><h1> LOGO </h1></a>
                         </li>
                     </div>
 
                     <div class="search-bar">
                         <li class="search-container">
                             <input type="text" placeholder="Faça sua pesquisa" class="barra-pesquisa">
+                            <div class="hints">
+                            </div>
                         </li>
                     </div>
 
                     <div class="infos">
                         <div class="user">
                             <li>
-                                <a href="login.html"> 
+                                <a href="login"> 
                                     <i class="fa-solid fa-user"></i>
                                     Faça seu login ou cadastro
                                 </a>
@@ -46,9 +48,15 @@
 
                         <div class="cart">
                             <li>
-                                <a href="cart.html">
+                                <a href="cart">
                                     <i class="fa-solid fa-cart-shopping"></i>
                                 </a>
+                            </li>
+                        </div>
+                        
+                        <div class="hamburguer-none">
+                            <li>
+                                <i id="hamburguer-mobile" class="fa-solid fa-bars"></i>
                             </li>
                         </div>
                     </div>
@@ -91,7 +99,7 @@
                     </li>
                 </div>
             </ul>
-        </nav> 
+        </nav>     
     </header>
 
     <div class="container-product">
@@ -144,5 +152,3 @@
 
     </body>
 </html>
-
-

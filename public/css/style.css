@@ -216,7 +216,7 @@
     .card-categorias:hover .sub-menu {
         display: block;
         position: absolute;
-        background-color: grey;
+        background-color: #172A3A;
         margin-top: 20px;
         margin-left: -15px;
         z-index: 14; 
@@ -487,8 +487,6 @@
         color: #F5F5F5;
         border: none;
     }
-
-<<<<<<< HEAD
     .hamburguer-none {
         display: none;
     }
@@ -497,14 +495,13 @@
         background-color: grey;
     }
 
-=======
+
     .hamburguer-menu {
         display: flex;
         align-items: center;
         justify-content: flex-end; /* Ajuste conforme necessário */
         height: 50px;
     }
->>>>>>> 9edba70d3365ab08b2bf302c012a7eb8c7d710c6
 }
 
 @media screen and (max-width: 1023px) {
