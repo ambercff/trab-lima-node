@@ -38,7 +38,7 @@
    }
 
    .price-product .price{
-      font-size: 20px;
+      font-size: 25px;
       font-weight: 800;
       border-right: 1px solid black;
       padding-right: 20px;
@@ -119,10 +119,25 @@
       padding-left: 30px;
    }
 
-   .total p {
+   .total  {
       color: #3C87C5;
       font-weight: 800;
    }
+
+   .cart-empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 60px;
+      height: 100vh;
+      gap: 30px;
+      color: #CBCBCB;
+   }
+
+   .column-product {
+      height: 100vh;
+   }
+
 }
 
 @media screen and (max-width: 1023px) {

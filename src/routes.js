@@ -71,8 +71,15 @@ router.post('/login', async(req, res) => {
 });
 
 router.post('/logout', async(req,res) => {
-    req.session.user = undefined;
-    res.redirect('/')
+    // req.session.user = undefined;
+    // res.redirect('/')
+    req.session.destroy((err) => {
+        if (err) {
+          console.error('Erro ao encerrar a sessão:', err);
+        }
+        res.redirect('/');
+      });
+      
 
 })
 
@@ -84,6 +91,7 @@ router.get('/cart', async(req, res) => {
     }
     let user = await User.findOne(req.session.user.id).populate('cart.compras.product');
 
+    console.log(user)
     console.log(user.cart.compras);
     res.render("cart", {user});
 })
@@ -106,29 +114,29 @@ router.post('/cart/add', async(req, res) => {
     }
 });
 
-// router.post('/cart/remove', async(req, res) => {
-//     if (!req.session.user) {
-//         res.redirect('/login');
-//         return;
-//     }
+router.post('/cart/remove', async(req, res) => {
+    if (!req.session.user) {
+        res.redirect('/login');
+        return;
+    }
 
-//     const {productId} = req.body;
-//     const user = await User.findOne(req.session.user.id);
-//     const removeId = user.cart.compras._id
+    const {productId} = req.body;
+    const user = await User.findOne(req.session.user.id);
+    const removeId = await user.cart.compras._id
 
-//     if (productId == removeId) {
-//         user.cart.compras.splice({product: productId});
-//     } else {
-//         console.log("Produto não encontrado!")
-//     }
+    if (productId == removeId) {
+        user.cart.compras.splice({product: productId});
+    } else {
+        console.log("Produto não encontrado!")
+    }
 
-//     try {
-//         await user.save();
-//         res.redirect('/');
-//     } catch (err) {
-//         console.log(err)
-//     }
-// });
+    try {
+        await user.save();
+        res.redirect('/');
+    } catch (err) {
+        console.log(err)
+    }
+});
 
 
 
