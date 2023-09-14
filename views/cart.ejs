@@ -15,18 +15,20 @@
                 <div class="menu">
                     <div class="logo">
                         <li>
-                            <a href="/"><h1> LOGO </h1></a>
+                            <a href="/"><img src="/imagens/logo.png"></a>
                         </li>
                     </div>
 
                     <div class="search-bar">
                         <li class="search-container">
                             <input type="text" placeholder="Faça sua pesquisa" class="barra-pesquisa">
+                            <i class="fa-solid fa-magnifying-glass"></i>
                             <div class="hints">
                             </div>
                         </li>
                     </div>
 
+                    <% if(!user) { %> <!---- se nao tiver nenhum usuario na sessão ---->
                     <div class="infos">
                         <div class="user">
                             <li>
@@ -36,7 +38,30 @@
                                 </a>
                             </li>
                         </div>
-                        
+
+                                                
+                        <div class="fale-conosco">
+                            <li>
+                                <a href="fale-conosco">
+                                    <i class="fa-regular fa-message"></i>
+                                    Fale conosco
+                                </a>
+                            </li>
+                        </div>
+
+                        <div class="cart">
+                            <li>
+                                <a href="cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </a>
+                            </li>
+                        </div>
+                    </div> 
+                    <% } %>
+
+                    <% if (user) { %><!---- se tiver nenhum usuario na sessão ---->
+                                            
+                    <div class="infos">        
                         <div class="fale-conosco">
                             <li>
                                 <a href="fale_conosco.html">
@@ -53,6 +78,16 @@
                                 </a>
                             </li>
                         </div>
+
+                        <div class="logout">
+                            <li>
+                                <p>Olá, <%= user.nome %>!</p>
+                                <form action="logout" method="POST">
+                                    <button type="submit"><i class="fa-solid fa-right-from-bracket"></i></button>
+                                </form>
+                            </li>
+                        </div>
+                        <% } %>
                         
                         <div class="hamburguer-none">
                             <li>
@@ -74,7 +109,7 @@
                         <div class="sub-menu">
                             <ul>
                                 <li> <a href="corte.html"> Ferramentas de Corte </a></li>
-                                <li> <a href="medicao.html"> Ferramentas de Medição </a></li>
+                                <li> <a href="ferramentas_medicao"> Ferramentas de Medição </a></li>
                                 <li> <a href="precisao.html"> Ferramentas de Precisão </a></li>
                                 <li> <a href="impacto.html"> Ferramentas de Impacto </a></li>
                             </ul>
@@ -83,7 +118,7 @@
                     </li>
 
                     <li>
-                        <a href="#"> Elétrica </a>
+                        <a href="ferramentas_eletricas"> Elétrica </a>
                     </li>
 
                     <li>
@@ -101,54 +136,57 @@
             </ul>
         </nav>     
     </header>
-
-    <div class="container-product">
-        <div class="image-product">
-            <img src="./imagens/hammer.jpg">
+        <div class="column-prouct">
+            <% for (const compra of user.cart.compras) { %>
+                <div class="container-product">
+                    <input type="hidden" value="<%=compra.product.id%>" name="productId">
+                    <div class="infos-product">
+                        <div class="cb-remove">
+                            <input type="checkbox" name="" class="select-product">
+                        </div>
+                        
+                        <div class="img-product">
+                            <img src="./imagens/<%=compra.product.image%>">
+                        </div>
+                        <div class="text-product">
+                            <div class="title-product">
+                                <h1> <%=compra.product.name%></h1>
+                            </div>
+                            <div class="price-product">
+                                <p class="price"> R$ <%= (compra.product.price).toFixed(2) %></p>
+                                <div class="forma-pagamento">
+                                    <p> em até 6x sem juros de R$ <%= (compra.product.price / 6).toFixed(2) %></p>
+                                    <p class="text-blue"> formas de pagamento </p>
+                                </div>
+                            </div>
+                            <div class="remove-product">
+                                <input type="checkbox" name="" class="select-product-mobile">
+                                <form method="POST" action="cart/remove">
+                                    <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <%}%>
         </div>
-
-        <div class="texto-product">
-            <div class="title-product">
-                <h1> Lorem ipsum dolor sit amet </h1>
+        <footer>
+            <div class="logo-footer">
+                <h1> LOGO </h1>
+                <!-- <img src="/imagens/logo_branca.png"> -->
+                <p> © 2023 Amber Forte </p>
             </div>
-
-            <div class="pagamento">
-                <div class="valor-produto">
-                    <h2> R$ 400,00 </h2>
-                </div>            
-                
-                <div class="forma-pagamento">
-                    <div>
-                        <p> Em até 6x sem juros de R$ 66,68</p>
-                    </div>
-
-                    <div>
-                        <p class ="text-pagamento"> Formas de pagamento </p>
-                    </div>
+            <div class="endereco-footer">
+                <p> Venha nos visitar! </p>
+                <p> Rua Joao Joaquim de Melo, 678, Vila Mimosa </p>
+                <p class="cel"> (19) 94561-3023</p>
+            </div>
+            <div class="social-footer">
+                <p> Nos siga! </p>
+                <div class="instagram-footer">
+                    <i class="fa-brands fa-instagram"></i> <p> @bsh_ferramentas</p>      
                 </div>
             </div>
-
-
-
-            <div class="container-frete">
-                <p> Calcule seu frete </p>
-                <div class="box-frete">
-                    <input type="text" class="cep" placeholder="CEP">
-                    <a href="#"> Não sei meu CEP </a>
-                </div>
-            </div>      
-        </div>    
-        
-        <div class="container-valor">
-        <p> Subtotal: </p>
-        <p> Desconto: </p>
-        <p> Frete: </p>
-        <p class="text-total"> Total: </p> 
-        </div>   
-    </div>
-
-
-
-
+        </footer>
     </body>
 </html>

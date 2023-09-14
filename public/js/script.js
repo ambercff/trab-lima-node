@@ -48,7 +48,7 @@
 
 //barra de pesquisa
 
-const ferramentas = ['martelo', 'furadeira', 'parafuso', 'bruna', 'maria', 'sarah', 'thayna'];
+const ferramentas = ['Martelo Unha 20mm Cabo de Fibra Vonder', 'Trena Laser 40m GLM 40 Bosch', 'Furadeira de Impacto Bosch com Chave de Mandril 450W 3/8', 'Esmerilhadeira Bosch Angular com Acessórios 5" 900W 220V GWS 9" 125 S', 'Jogo de Ferramentas 108 peças em Aço Cromo Vanádio Dexter', 'Lavadora de Alta Pressão Wap 1300 PSI'];
 
 const searchInput = document.querySelector('.barra-pesquisa');
 const hints = document.querySelector('.hints');

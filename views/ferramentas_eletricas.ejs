@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/be07557a2e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/styleProduct.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title> Produto </title>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>BSH</title>
 </head>
 <body>
     <header>
@@ -137,66 +136,18 @@
         </nav>     
     </header>
 
-    <div class="produto">
-        <div class="imagem-produto">
-            <img src="imagens/hammer.jpg">
-        </div>
-
-        <div class="texto-produto">
-            <div class="titulo-produto">
-                <h1> Lorem ipsum dolor sit amet </h1>
-            </div>
-            
-            <div class="marca">
-                <p> Marca </p>
-            </div>
-
-            <div class="pagamento">
-                <div class="valor-produto">
-                    <h1> R$ 400,00</h1>
-                </div>
-
-                <div class="forma-pagamento">
-                    <div>
-                        <p> Em até 6x sem juros de R$ 66,68</p>
-                    </div>
-
-                    <div>
-                        <p class ="text-pagamento"> Formas de pagamento </p>
-                    </div>
-                </div>
-                
-            </div>
-            
-            <div class="container-frete">
-                <p> Calcule seu frete </p>
-                <div class="box-frete">
-                    <input type="text" class="cep" placeholder="CEP">
-                    <a href="#"> Não sei meu CEP </a>
-                </div>
-            </div>
-
-            <div class="button-cart">
-                <button type="submit"> Adicionar ao Carrinho </button>
-            </div>
-        </div>  
-    </div>
-
-    <div class="title-wrapper">
-        <h1> Outros produtos: </h1>
-    </div>
-    <div class="wrapper" style="justify-content: space-evenly; margin-top: 30px;">
+    <div class="wrapper">
         <% for (const product of products) { %>
-            <% if (product.categoria == 'destaque') { %>
+            <% if (product.categoria == 'eletrica') { %>
                 <div class="item">
-                    <a href="#">
+                    <a href="product">
                         <div class="item-img">
                             <img src="./imagens/<%=product.image%> ">
                         </div>
-                        <p> <%= product.name %> </p>
+                        <p> <%= product.name %>  </p>
 
                         <div class="valor">
-                            <p> R$ <%= (product.price).toFixed(2) %> </p>
+                            <p> R$ <%= (product.price).toFixed(2)  %></p>
                         </div>        
                     </a>
                     <form method="POST" action="cart/add" class="comprar">
@@ -214,7 +165,6 @@
             <% } %>
         <% } %>
     </div>
-
     <footer>
         <div class="logo-footer">
             <h1> LOGO </h1>
@@ -233,6 +183,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
