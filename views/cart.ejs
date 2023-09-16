@@ -147,12 +147,7 @@
             <% } else {%>
             <% for (const compra of user.cart.compras) { %>
                     <div class="container-product">
-                        <input type="hidden" value="<%=compra.product.id%>" name="productId">
-                        <div class="infos-product">
-                            <div class="cb-remove">
-                                <input type="checkbox" name="" class="select-product">
-                            </div>
-                            
+                        <div class="infos-product">                   
                             <div class="img-product">
                                 <img src="./imagens/<%=compra.product.image%>">
                             </div>
@@ -168,8 +163,8 @@
                                     </div>
                                 </div>
                                 <div class="remove-product">
-                                    <input type="checkbox" name="" class="select-product-mobile">
                                     <form method="POST" action="cart/remove">
+                                        <input type="hidden" value="<%=compra._id%>" name="productId">
                                         <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
                                     </form>
                                 </div>
@@ -195,8 +190,7 @@
         <%}%>
         <footer>
             <div class="logo-footer">
-                <h1> LOGO </h1>
-                <!-- <img src="/imagens/logo_branca.png"> -->
+                <img src="/imagens/logo_branca.png">
                 <p> © 2023 Amber Forte </p>
             </div>
             <div class="endereco-footer">

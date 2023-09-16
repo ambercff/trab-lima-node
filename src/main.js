@@ -17,7 +17,7 @@ app.use(express.static(path.resolve('public')));
 app.use(bodyParser.urlencoded({extended: true})) //usando o decodificador para entender o que vem do body
 app.use(session({
     secret: "di3j29idmnadp2-dça2dlkf",
-    resalve: false,
+    resave: false,
     saveUninitialized: false
 }));
 
