@@ -8,103 +8,82 @@
     <title>BSH</title>
 </head>
 <body>
-    <header>
-        <nav class="nav-main">
-            <ul class="ul-menu">
-                <div class="menu">
-                    <div class="logo">
-                        <li>
-                            <a href="/"><img src="/imagens/logo.png"></a>
-                        </li>
+    <header id="header">
+        <a id="logo" href="/"><img src="../imagens/logo.png"></a>
+            <nav id="nav">
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
+            </div>
+                <span id="hamburger"></span>
+            </button>
+            <ul id="menu" role="menu">
+                <div class="search-bar">
+                <li class="search-container">
+                    <input type="text" placeholder="Faça sua pesquisa" class="barra-pesquisa">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <div class="hints">
                     </div>
-
-                    <div class="search-bar">
-                        <li class="search-container">
-                            <input type="text" placeholder="Faça sua pesquisa" class="barra-pesquisa">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <div class="hints">
-                            </div>
-                        </li>
-                    </div>
-
-                    <% if(!user) { %> <!---- se nao tiver nenhum usuario na sessão ---->
-                    <div class="infos">
-                        <div class="user">
-                            <li>
-                                <a href="login"> 
-                                    <i class="fa-solid fa-user"></i>
-                                    Faça seu login ou cadastro
-                                </a>
-                            </li>
-                        </div>
-
-                                                
-                        <div class="fale-conosco">
-                            <li>
-                                <a href="fale-conosco">
-                                    <i class="fa-regular fa-message"></i>
-                                    Fale conosco
-                                </a>
-                            </li>
-                        </div>
-
-                        <div class="cart">
-                            <li>
-                                <a href="cart">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </a>
-                            </li>
-                        </div>
-                    </div> 
-                    <% } %>
-
-                    <% if (user) { %><!---- se tiver nenhum usuario na sessão ---->
-                                            
-                    <div class="infos">        
-                        <div class="fale-conosco">
-                            <li>
-                                <a href="fale-conosco">
-                                    <i class="fa-regular fa-message"></i>
-                                    Fale conosco
-                                </a>
-                            </li>
-                        </div>
-
-                        <div class="cart">
-                            <li>
-                                <a href="cart">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                </a>
-                            </li>
-                        </div>
-
-                        <div class="logout">
-                            <li>
-                                <p>Olá, <%= user.nome %>!</p>
-                                <form action="logout" method="POST">
-                                    <button type="submit"><i class="fa-solid fa-right-from-bracket"></i></button>
-                                </form>
-                            </li>
-                        </div>
-                        <% } %>
-                        
-                        <div class="hamburguer-none">
-                            <li>
-                                <i id="hamburguer-mobile" class="fa-solid fa-bars"></i>
-                            </li>
-                        </div>
-                    </div>
+                </li>
                 </div>
-            </ul>
-        </nav>
-
-        <nav class="nav-secondary"> 
-            <ul>
-                <div class="categorias">
+            <% if(!user) { %>
+                <div class="infos">
+                <div class="user">
+                    <li>
+                        <a href="login"> 
+                            <i class="fa-solid fa-user"></i>
+                            Faça seu login ou cadastro
+                        </a>
+                    </li>
+                </div>
+                <div class="fale-conosco">
+                    <li>
+                        <a href="fale-conosco">
+                            <i class="fa-regular fa-message"></i>
+                            Fale conosco
+                        </a>
+                    </li>
+                </div>
+    
+                <div class="cart">
+                    <li>
+                        <a href="cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Carrinho
+                        </a>
+                    </li>
+                </div>
+            <% } %>
+    
+            <% if (user) { %>
+    
+                                        
+                <div class="fale-conosco">
+                    <li>
+                        <a href="fale-conosco">
+                            <i class="fa-regular fa-message"></i>
+                            Fale conosco
+                        </a>
+                    </li>
+                </div>
+    
+                <div class="cart">
+                    <li>
+                        <a href="cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Carrinho
+                        </a>
+                    </li>
+                </div>
+                <div class="logout">
+                    <li>
+                        <p>Olá, <%= user.nome %>!</p>
+                        <form action="logout" method="POST">
+                            <button type="submit"><i class="fa-solid fa-right-from-bracket"></i></button>
+                        </form>
+                    </li>
+                </div>
+            <% } %>
+                <div class="categorias-mobile">
                     <li class="card-categorias">
-                        <i id ="hamburguer" class="fa-solid fa-bars"></i> 
-                        <a href="#">  Categorias </a>
-
                         <div class="sub-menu">
                             <ul>
                                 <li> <a href="corte.html"> Ferramentas de Corte </a></li>
@@ -115,26 +94,63 @@
                         </div>
                         
                     </li>
-
+    
                     <li>
                         <a href="ferramentas_eletricas"> Elétrica </a>
                     </li>
-
+    
                     <li>
                     <a href="#"> Ofertas </a>
                     </li>
-
+    
                     <li>
                         <a href="#"> Fixação </a>
                     </li>
-
+    
                     <li>
                         <a href="#"> Jardinagem </a>
                     </li>
                 </div>
+            </div> 
             </ul>
-        </nav>     
-    </header>
+            </nav>
+        </header>
+        <nav class="nav-secondary"> 
+          <ul>
+              <div class="categorias">
+                  <li class="card-categorias">
+                      <i id ="hamburguer" class="fa-solid fa-bars"></i> 
+                      <a href="#">  Categorias </a>
+    
+                      <div class="sub-menu">
+                          <ul>
+                              <li> <a href="corte.html"> Ferramentas de Corte </a></li>
+                              <li> <a href="ferramentas_medicao"> Ferramentas de Medição </a></li>
+                              <li> <a href="precisao.html"> Ferramentas de Precisão </a></li>
+                              <li> <a href="impacto.html"> Ferramentas de Impacto </a></li>
+                          </ul>
+                      </div>
+                      
+                  </li>
+    
+                  <li>
+                      <a href="ferramentas_eletricas"> Elétrica </a>
+                  </li>
+    
+                  <li>
+                  <a href="#"> Ofertas </a>
+                  </li>
+    
+                  <li>
+                      <a href="#"> Fixação </a>
+                  </li>
+    
+                  <li>
+                      <a href="#"> Jardinagem </a>
+                  </li>
+              </div>
+          </ul>
+      </nav>  
 
     <div class="wrapper">
         <% for (const product of products) { %>

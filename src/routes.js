@@ -73,8 +73,6 @@ router.post('/login', async(req, res) => {
 });
 
 router.post('/logout', async(req,res) => {
-    // req.session.user = undefined;
-    // res.redirect('/')
     req.session.destroy((err) => {
         if (err) {
           console.error('Erro ao encerrar a sessão:', err);
@@ -86,13 +84,13 @@ router.post('/logout', async(req,res) => {
 })
 
 router.get('/cart', async(req, res) => {
-    const user_session = req.session.user._id;
-    console.log(user_session)
 
     if (!req.session.user) {
         res.redirect('/login');
         return;
     }
+
+    const user_session = req.session.user._id;
 
     let user = await User.findById(user_session).populate('cart.compras.product');
 
@@ -118,34 +116,6 @@ router.post('/cart/add', async(req, res) => {
     }
 });
 
-// router.post('/cart/remove', async(req, res) => {
-    
-//     const user_session = req.session.user._id;
-
-//     if (!user_session) {
-//         res.redirect('/login');
-//         return;
-//     }
-
-//     const {productId} = req.body;
-//     console.log(productId); 
-//     const user = await User.findById(user_session);
-//     const removeId = await user.cart.compras._id
-
-//     if (productId == removeId) {
-//         // user.cart.compras.splice({product: productId});
-//         res.redirect('/')
-//     } else {
-//         console.log("Produto não encontrado!")
-//     }
-
-//     try {
-//         await user.save();
-//         res.redirect('/');
-//     } catch (err) {
-//         console.log(err)
-//     }
-// });
 router.post('/cart/remove', async (req, res) => {
     const user_session = req.session.user._id;
 

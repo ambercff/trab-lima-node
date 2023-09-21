@@ -6,60 +6,76 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
 @media screen and (min-width: 1024px) {
-    nav {
-        background-color: #F5F5F5;
-        height: 80px;
+    body,
+    ul {
+      margin: 0px;
+      padding: 0px;
     }
     
-    nav ul {
-        list-style-type: none;
+    a {
+      color: #172A3A;
+      text-decoration: none;
     }
     
-    nav a {
-        text-decoration: none;
+    .infos {
+        display: flex;
+        justify-content: space-around;
+        width: 30vw;
+    }
+
+    .infos i {
+        padding-right: 10px;
+    }
+
+    #header {
+      box-sizing: border-box;
+      height: 80px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #F5F5F5;
+    }
+
+    #hamburguer {
+        padding-right: 8px;
+    }
+    
+    #menu {
+      display: flex;
+      list-style: none;
+      gap: 10rem;
+      align-items: center;
+    }
+    
+    #menu a {
+      display: flex;
+      padding: 0.5rem;
+      font-size: 14px;
+      align-items: center;
+    }
+
+    #menu i {
+        font-size: 25px;
         color: #172A3A;
     }
+   
 
-    nav a:hover {
+    #menu a:hover {
         color: #3c87c5;
     }
-
     
-    .menu, .infos, .user, .fale-conosco, .cart {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-    .logout li {
-        display: flex; 
-        align-items: center; 
-    }
-
-    .logout .session-user p {
-        margin-right: 20px;
-    }
-    
-    .logo {
-        width: 247px;
-        height: 80px;
-    }
-    .logo img {
-        width: 100%;
-        height: 100%;
-    }
-
-   
     #btn-mobile {
-        display: none;
-      }
-
+      display: none;
+    }
+    
     .search-bar input {
         width: 452px;
         height: 37px;
     }
-
+    
     .search-bar {
         display: flex;
         justify-content: center;
@@ -82,40 +98,81 @@
         font-size: 20px; 
         color: #172A3A;
     }
-
+    
     .hints {
         position: absolute;
         height: auto;
         width: 100%;
     }
-
+    
     .hint {
         border: 1px solid #172A3A;
         width: 100%;
         height: 25px;
         background-color: #F5F5F5;
     }
-
-    #hamburguer {
-        margin-right: 5px;
-        cursor: pointer;
+    .nav-secondary {
+      background-color: #172A3A;
+      height: 45px;
     }
     
-    .infos {
-        width: 400px;
+    .categorias {
+      display: flex;
+      align-items: center;
+      height: 45px;
+      justify-content: center;
     }
     
-    .user a, .fale-conosco a, .cart a {
-        display: flex;
-        align-items: center;
-    }
-    
-    .user i, .fale-conosco i, .cart i {
-        font-size: 30px;
-        margin-right: 8px;
-        color: #172A3A;
+    .nav-secondary ul {
+      list-style-type: none;
     }
 
+    .categorias a:hover {
+        color: #3c87c5;
+    }
+    
+    .categorias a {
+      margin-right: 120px;
+      text-decoration: none;
+      color: #F5F5F5;
+      display: flex;
+      align-items: center;
+    }
+    
+    .card-categorias:hover .sub-menu {
+      display: block;
+      position: absolute;
+      background-color: #172A3A;
+      margin-top: 20px;
+      margin-left: -15px;
+      z-index: 14; 
+    }
+    
+    .card-categorias:hover .sub-menu ul {
+      display: block;
+      margin: 10px;
+    }
+    
+    .sub-menu {
+      display: none;
+    }
+    
+    .card-categorias i {
+      color: #F5F5F5
+    }
+    
+    .card-categorias i:hover {
+      color: #3c87c5;
+    }
+    
+    .categorias li:first-child {
+      display: flex;
+    }
+    
+    .categorias-mobile {
+      display: none;
+    }
+  
     .logout button {
         border: none; 
         background: none;
@@ -123,18 +180,16 @@
         margin-left: 15px;
     }
 
-    .logout button i {
-        font-size: 20px;
+    .logout li{
+        display: flex;
+        align-items: center;
     }
 
-    .session-user p {
-        font-size: 18px; 
+    .logout {
+        display: flex;
+        align-items: center;
     }
     
-    .infos a {
-        font-size: 12px;
-    }
-
     .slider {
         margin: 0 auto; 
         width: 100%;
@@ -285,7 +340,7 @@
     .title-wrapper {
         display: flex;
         justify-content: center;
-        margin-top: 30px;
+        margin-top: 100px;
     }
     
     .wrapper {
@@ -329,11 +384,7 @@
     }
 
     .item:hover {
-        box-shadow: 0 10px 40px #00000056;
-        border-radius: 20px;
-        height: 450px; 
-        justify-content: center;
-        align-items: center;
+        transform: scale(1.05);
     }
 
     .valor p {
@@ -423,49 +474,61 @@
 }
 
 @media screen and (max-width: 1023px) {
-    nav {
-        background-color: #F5F5F5;
-        height: 50px;
-        width: 100%;
+    body,
+    ul {
+      margin: 0px;
+      padding: 0px;
     }
     
-    nav ul {
-        list-style-type: none;
-    } 
-
-    nav a {
+    a {
+        color: #172A3A;
         text-decoration: none;
     }
-
-    .logo {
-        width: 8rem;
-        height: 100%;
+       
+    #header {
+      box-sizing: border-box;
+      height: 70px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: #F5F5F5;
+      width: 100vw;
+    }
+    
+    #menu {
+      display: flex;
+      list-style: none;
+      gap: 10rem;
+      align-items: center;
+    }
+    
+    #menu a {
+      display: block;
+      padding: 0.5rem;
+    }
+    
+    #btn-mobile {
+      display: none;
+    }
+    
+    .search-bar input {
+        width: 452px;
+        height: 37px;
+    }
+    
+    .search-bar {
         display: flex;
-        align-items: center;
+        justify-content: center;
     }
-    .logo img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .menu {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        height: 50px;
-    }
-
-    .logout {
-        display: none;
-    }
-
+    
     .search-container {
         position: relative;
     }
     
     .barra-pesquisa {
-        width: 35vw;
-        height: 25px;
+        width: 452px;
+        height: 37px;
     }
     
     .fa-magnifying-glass {
@@ -473,12 +536,124 @@
         top: 50%;
         right: 10px;
         transform: translateY(-50%);
-        font-size: 15px; 
+        font-size: 20px; 
         color: #172A3A;
     }
+    
+    .hints {
+        position: absolute;
+        height: auto;
+        width: 100%;
+    }
+    
+    .hint {
+        border: 1px solid #172A3A;
+        width: 100%;
+        height: 25px;
+        background-color: #F5F5F5;
+    }
+    .nav-secondary {
+      background-color: #172A3A;
+      height: 45px;
+    }
+    
+    .categorias {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .nav-secondary ul {
+      list-style-type: none;
+    }
+    
+    .categorias a {
+      margin-right: 120px;
+      text-decoration: none;
+      color: #F5F5F5;
+      display: flex;
+      align-items: center;
+    }
+    .sub-menu {
+      display: block;
+    }
+  
+    .nav-secondary {
+      display: none;
+    }
 
-    .infos:not(:last-child), .user, .fale-conosco, .cart, .nav-secondary {
-        display: none;
+    #menu {
+      display:block;
+      position: absolute;
+      width: 100%;
+      top: 70px;
+      right: 0px;
+      background: #e7e7e7;
+      transition: 0.6s;
+      z-index: 1000;
+      height: 0px;
+      visibility: hidden;
+      overflow-y: hidden;
+    }
+    #nav.active #menu {
+      height: calc(100vh - 70px);
+      visibility: visible;
+      overflow-y: auto;
+    }
+    #menu a {
+      display: flex;
+      padding: 1rem 0;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+      justify-content: center;
+    }
+    #menu a:hover {
+        transform: scale(1.05);
+    }
+    #btn-mobile {
+      display: flex;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      gap: 0.5rem;
+    }
+    #hamburger {
+      border-top: 2px solid;
+      width: 20px;
+    }
+    #hamburger::after,
+    #hamburger::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      margin-top: 5px;
+      transition: 0.3s;
+      position: relative;
+    }
+    #nav.active #hamburger {
+      border-top-color: transparent;
+    }
+    #nav.active #hamburger::before {
+      transform: rotate(135deg);
+    }
+    #nav.active #hamburger::after {
+      transform: rotate(-135deg);
+      top: -7px;
+    }
+    .infos {
+      display: flex;
+      flex-direction: column; 
+      justify-content: space-between;
+    }
+    .infos a {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
     }
     .slider {
         margin: 0 auto; 
@@ -594,10 +769,7 @@
     }
 
     .item:hover {
-        box-shadow: 0 10px 40px #00000056;
-        border-radius: 20px;
-        justify-content: center;
-        align-items: center;
+        transform: scale(1.05);
     }
 
     .item p {
@@ -669,5 +841,14 @@
     .endereco-footer { 
         border-left: 1px solid #F5F5F5;
         border-right: 1px solid #F5F5F5;
+    }
+
+    .logout li {
+        display: flex;
+    }
+    .logout button {
+        border: none; 
+        background: none;
+        cursor: pointer;
     }
 }

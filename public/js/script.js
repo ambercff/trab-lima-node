@@ -1,28 +1,3 @@
-// hamburguer mexendo
-
-    const hamburguer = document.querySelector("#hamburguer");
-
-    function addActiveClass() {
-        hamburguer.classList.add('fa-solid', 'fa-bars-staggered');
-    }
-
-    function removeActiveClass() {
-        hamburguer.classList.remove('fa-solid', 'fa-bars-staggered');
-        hamburguer.classList.add('fa-solid', 'fa-bars')
-    }
-
-    hamburguer.addEventListener("click", () => {
-
-        if (hamburguer.classList.contains('fa-bars-staggered')) {
-            removeActiveClass();
-        } else {
-            addActiveClass();
-        }
-    });
-
-    hamburguer.addEventListener("mouseover", addActiveClass);
-    hamburguer.addEventListener("mouseout", removeActiveClass);
-
 //slider
 
     let count = 1; 
@@ -68,6 +43,27 @@ searchInput.onkeyup = ev => {
         hints.appendChild(newHint);
     });
 }
+
+//menu 
+
+const btnMobile = document.getElementById('btn-mobile');
+
+function toggleMenu(event) {
+  if (event.type === 'touchstart') event.preventDefault();
+  const nav = document.getElementById('nav');
+  nav.classList.toggle('active');
+  const active = nav.classList.contains('active');
+  event.currentTarget.setAttribute('aria-expanded', active);
+  if (active) {
+    event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+  } else {
+    event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+  }
+}
+
+btnMobile.addEventListener('click', toggleMenu);
+btnMobile.addEventListener('touchstart', toggleMenu);
+
 
 
 
