@@ -88,13 +88,15 @@ router.get('/cart', async(req, res) => {
     if (!req.session.user) {
         res.redirect('/login');
         return;
+    } else {
+
+        const user_session = req.session.user._id;
+
+        let user = await User.findById(user_session).populate('cart.compras.product');
+    
+        res.render("cart", {user});
     }
 
-    const user_session = req.session.user._id;
-
-    let user = await User.findById(user_session).populate('cart.compras.product');
-
-    res.render("cart", {user});
 });
 
 router.post('/cart/add', async(req, res) => {
@@ -104,6 +106,7 @@ router.post('/cart/add', async(req, res) => {
         return;
     }
 
+    
     const {product} = req.body;
     const user = await User.findById(user_session);
     user.cart.compras.push({product: product});

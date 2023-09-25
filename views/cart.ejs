@@ -56,7 +56,7 @@
     
             <% if (user) { %>
     
-            <div class="infos">                                      
+                                        
                 <div class="fale-conosco">
                     <li>
                         <a href="fale-conosco">
@@ -76,15 +76,12 @@
                 </div>
                 <div class="logout">
                     <li>
-                        <a>
-                            <p>Olá, <%= user.nome %>!</p>
-                            <form action="logout" method="POST">
-                                <button type="submit"><i class="fa-solid fa-right-from-bracket"></i></button>
-                            </form>
-                        </a>
+                        <p>Olá, <%= user.nome %>!</p>
+                        <form action="logout" method="POST">
+                            <button type="submit"><i class="fa-solid fa-right-from-bracket"></i></button>
+                        </form>
                     </li>
                 </div>
-            </div>  
             <% } %>
                 <div class="categorias-mobile">
                     <li class="card-categorias">
@@ -154,7 +151,43 @@
                   </li>
               </div>
           </ul>
-      </nav>  
+      </nav>     
+        <div class="column-product">
+            <% if (user.cart.compras.length === 0) {%>
+                <div class="cart-empty">
+                    <p> O carrinho está vazio!</p>
+                    <i class="fa-regular fa-rectangle-xmark"></i>
+                </div>
+            </div>
+
+            <% } else {%>
+            <% for (const compra of user.cart.compras) { %>
+                    <div class="container-product">
+                        <div class="infos-product">                   
+                            <div class="img-product">
+                                <img src="./imagens/<%=compra.product.image%>">
+                            </div>
+                            <div class="text-product">
+                                <div class="title-product">
+                                    <h1> <%=compra.product.name%></h1>
+                                </div>
+                                <div class="price-product">
+                                    <p class="price"> R$ <%= (compra.product.price).toFixed(2) %></p>
+                                    <div class="forma-pagamento">
+                                        <p> em até 6x sem juros de R$ <%= (compra.product.price / 6).toFixed(2) %></p>
+                                        <p class="text-blue"> formas de pagamento </p>
+                                    </div>
+                                </div>
+                                <div class="remove-product">
+                                    <form method="POST" action="cart/remove">
+                                        <input type="hidden" value="<%=compra._id%>" name="productId">
+                                        <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
             <div class="container-teste">
                 <div class="container-frete">
                     <p> Calcule seu frete </p>
@@ -188,7 +221,5 @@
                 </div>
             </div>
         </footer>
-        
-<script src="../js/script.js"></script>
     </body>
 </html>
