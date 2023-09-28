@@ -138,6 +138,25 @@
       height: 100vh;
    }
 
+   .qtde {
+      gap: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .forma-pagamento {
+      border-right: 1px solid black;
+      padding-right: 20px;
+   }
+
+   .btn-cart {
+      display: flex;
+      justify-content: end;
+      margin-right: 300px;
+      padding-top: 50px;
+   }
+
 }
 
 @media screen and (max-width: 1023px) {

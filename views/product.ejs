@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/be07557a2e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/styleProduct.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleProduct.css">
     <title> Produto </title>
 </head>
 <body>
@@ -155,34 +155,34 @@
 
     <div class="produto">
         <div class="imagem-produto">
-            <img src="imagens/hammer.jpg">
+            <img src="../imagens/<%=product.image%> ">
         </div>
-
+    
         <div class="texto-produto">
             <div class="titulo-produto">
-                <h1> Lorem ipsum dolor sit amet </h1>
+                <h1> <%= product.name %> </h1>
             </div>
-            
+    
             <div class="marca">
-                <p> Marca </p>
+                <p> <%= product.brand %> </p>
             </div>
-
+    
             <div class="pagamento">
                 <div class="valor-produto">
-                    <h1> R$ 400,00</h1>
+                    <h1> R$ <%= (product.price).toFixed(2) %> </h1>
                 </div>
 
-                <div class="forma-pagamento">
-                    <div>
-                        <p> Em até 6x sem juros de R$ 66,68</p>
-                    </div>
+                        <div class="forma-pagamento">
+                            <div>
+                                <p> Em até 6x sem juros de R$ 66,68</p>
+                            </div>
 
-                    <div>
-                        <p class ="text-pagamento"> Formas de pagamento </p>
+                            <div>
+                                <p class ="text-pagamento"> Formas de pagamento </p>
+                            </div>
+                        </div>
+                        
                     </div>
-                </div>
-                
-            </div>
             
             <div class="container-frete">
                 <p> Calcule seu frete </p>
@@ -212,7 +212,7 @@
                 <div class="item">
                     <a href="#">
                         <div class="item-img">
-                            <img src="./imagens/<%=product.image%> ">
+                            <img src="../imagens/<%=product.image%> ">
                         </div>
                         <p> <%= product.name %> </p>
 

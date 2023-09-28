@@ -17,11 +17,23 @@ router.get('/cadastro', (req, res) => {
     res.render("cadastro")
 })
 
-router.get('/product', async(req, res) => {
-    const user = await req.session.user
-    const products = await Product.find();
-    res.render("product", {user, products});
-})
+router.get('/product/:productId', async (req, res) => {
+    const user = req.session.user;
+    const productId = req.params.productId;
+
+    try {
+        const product = await Product.findById(productId);
+        const products = await Product.find();
+
+        if (!product) {
+            return res.status(404).render('produto_nao_encontrado', { user });
+        }
+        res.render('product', { user, product, products });
+    } catch (error) {
+        console.error('Erro ao buscar detalhes do produto:', error);
+        res.status(500).render('erro', { user });
+    }
+});
 
 router.get('/ferramentas_medicao', async(req, res) => {
     const user = await req.session.user
@@ -149,6 +161,40 @@ router.post('/cart/remove', async (req, res) => {
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: 'Erro ao remover o produto do carrinho.' });
+    }
+});
+
+router.get('/search', async (req, res) => {
+    const user = await req.session.user;
+    try {
+        const searchTerm = req.query.q; 
+        const regex = new RegExp(searchTerm, 'i');
+
+        const results = await Product.find({ name: regex});
+
+        res.render('search-results', { results, searchTerm, user });
+    } catch (error) {
+        console.error('Erro na pesquisa:', error);
+        res.status(500).send('Erro na pesquisa');
+    }
+});
+
+// Dentro do seu arquivo de rotas (router.js ou similar)
+
+router.get('/search/suggestions', async (req, res) => {
+    const searchTerm = req.query.q; // Obtém o termo de pesquisa da query string
+    try {
+        // Realize uma pesquisa no banco de dados usando Mongoose
+        const results = await Product.find({ name: { $regex: new RegExp(searchTerm, 'i') }})
+            .limit(5) // Limite o número de sugestões retornadas
+            .select('name'); // Selecione apenas o campo 'nome' dos produtos
+
+        const suggestions = results.map((result) => result.name);
+
+        res.json(suggestions);
+    } catch (error) {
+        console.error('Erro ao buscar sugestões:', error);
+        res.status(500).json({ error: 'Erro ao buscar sugestões' });
     }
 });
 
