@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 let User = require('./model/User.js');
 let Product = require('./model/Product.js');
+const axios = require('axios');
 
 router.get('/', async(req, res) => {
     const user = await req.session.user
@@ -16,10 +17,10 @@ router.get('/login', (req, res) => {
 router.get('/cadastro', (req, res) => {
     res.render("cadastro")
 })
-
 router.get('/product/:productId', async (req, res) => {
     const user = req.session.user;
     const productId = req.params.productId;
+    const cepDestino = req.query.cep; // Acessando o parâmetro cep da query
 
     try {
         const product = await Product.findById(productId);
@@ -28,12 +29,21 @@ router.get('/product/:productId', async (req, res) => {
         if (!product) {
             return res.status(404).render('produto_nao_encontrado', { user });
         }
-        res.render('product', { user, product, products });
+
+        // Fazendo a requisição à API de CEP
+        const response = await axios.get(`https://www.cepcerto.com/ws/json-frete/13186642/${cepDestino}/200/50/30/20`);
+        const data = response.data;
+
+        // Agora 'data' contém os dados da resposta da API de CEP
+        console.log(data); // Exemplo de como você pode usar os dados
+
+        res.render('product', { user, product, products, frete: data }); // Passando os dados do frete para o template
     } catch (error) {
         console.error('Erro ao buscar detalhes do produto:', error);
         res.status(500).render('erro', { user });
     }
 });
+
 
 router.get('/ferramentas_medicao', async(req, res) => {
     const user = await req.session.user
@@ -197,6 +207,33 @@ router.get('/search/suggestions', async (req, res) => {
         res.status(500).json({ error: 'Erro ao buscar sugestões' });
     }
 });
+
+// router.get('/:cep', async (req, res) => {
+//     const cepOrigem = '13186642';
+//     const cepDestino = req.params.cep;
+//     const peso = 200;
+//     const altura = 50;
+//     const largura = 30;
+//     const profundidade = 20;
+
+//     try {
+//         // Fazendo a requisição à API de CEP
+//         const response = await axios.get(`https://www.cepcerto.com/ws/json-frete/${cepOrigem}/${cepDestino}/${peso}/${altura}/${largura}/${profundidade}`);
+        
+//         // Obtendo os dados da resposta da API
+//         const data = response.data;
+    
+//         // Agora 'data' contém os dados da resposta da API de CEP
+//         console.log(data); // Exemplo de como você pode usar os dados
+    
+//         // ... o resto do seu código ...
+//     } catch (error) {
+//         // Tratamento de erros
+//         console.error(error);
+//         res.status(500).json({ error: 'Erro ao calcular o frete.' });
+//     }
+    
+// });
 
 
 

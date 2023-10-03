@@ -184,13 +184,23 @@
                         
                     </div>
             
-            <div class="container-frete">
-                <p> Calcule seu frete </p>
-                <div class="box-frete">
-                    <input type="text" class="cep" placeholder="CEP">
-                    <a href="#"> Não sei meu CEP </a>
-                </div>
-            </div>
+                    <div class="container-frete">
+                        <p>Calcule seu frete</p>
+                        <div class="box-frete">
+                            <form id="cep-form">
+                                <input type="text" class="cep" name="cep" placeholder="CEP" id="cep-input">
+                                <button type="submit">Calcular Frete</button>
+                            </form>
+                            <% if(frete) { %>
+                                <p>Valor frete: R$ <%= frete.valorsedex %> </p>
+                                <p>Prazo: <%= frete.prazosedex %> dias </p> 
+                            <% } else { %>
+                                <p>Frete não calculado.</p>
+                            <% } %>
+                            <div id="resultado-frete"></div>
+                        </div>
+                    </div>
+                    
 
             <div class="qtde">
                 <p> Quantidade: </p>
@@ -253,6 +263,8 @@
             </div>
         </div>
     </footer>
-
+    <script>
+        
+    </script>
 </body>
 </html>
